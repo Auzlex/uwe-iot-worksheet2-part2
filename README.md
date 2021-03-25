@@ -1,3 +1,2 @@
-# iot-worksheet2-part2
-
-Internet of things worksheet 2 part 2
+# Internet Of Things | Worksheet 2 Part 2
+This gitlab repo contains the resources for worksheet 2 part 1

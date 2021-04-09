@@ -2,11 +2,6 @@
     Scripted by Charles Edwards
 """
 
-# "-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3***2**+****16=/*****7***8*90"
-
-# 11:30
-# letters = "-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3***2**+****16=/*****8*9*7**0"
-
 # our binary heap
 binary_heap = list("-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90-")
 
@@ -47,8 +42,6 @@ def decode_bt(msg):
 
     return decoded_message # return the message
 
-
-print("decoded message:",decode_bt('..- ...'))
-print("decoded message:",decode_bt('-.. --- --. . -.-. --- .. -. / - --- / - .... . / -- --- --- -.'))
-print("decoded message:",decode_bt(".-. .---- -.. . ... .---- -...- .... .. -...- -.--."))
-
+# print("decoded message:",decode_bt('..- ...'))
+# print("decoded message:",decode_bt('-.. --- --. . -.-. --- .. -. / - --- / - .... . / -- --- --- -.'))
+# print("decoded message:",decode_bt(".-. .---- -.. . ... .---- -...- .... .. -...- -.--."))

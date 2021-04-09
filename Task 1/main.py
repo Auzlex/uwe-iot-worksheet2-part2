@@ -1,3 +1,7 @@
+"""
+    Scripted by Charles Edwards
+    Worksheet 2 Part 2 Task 1
+"""
 import morse
 
 def test_decode(): # perform 5 decodes
@@ -11,6 +15,6 @@ def test_decode(): # perform 5 decodes
 
 # begin tests if this module is the entry point of code
 if __name__ == "__main__":
-    print("test start")
+    print("-------- test start")
     test_decode()
-    print("test end")
+    print("-------- test end")

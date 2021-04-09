@@ -3,7 +3,8 @@
 """
 
 # our binary heap
-binary_heap = list("-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90-")
+binary_heap = list('-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90*************_****"**.********\'**-********;!*)***¡*,****:-')
+#binary_heap = list("-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90-")
 
 def decode_bt(msg):
 

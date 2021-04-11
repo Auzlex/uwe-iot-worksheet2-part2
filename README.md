@@ -5,7 +5,6 @@ This gitlab repo contains the resources for worksheet 2 part 2
 1. [Task 1](#Task-1)
 2. [Task 2](#Task-2)
 3. [Task 3](#Task-3)
-4. [Task 4](#Task-4)
 
 ## Task 1
 In this task we had to create what is known as a binary heap. A binary heap is a linear representation of a complete binary tree. In this task our binary heap is represented as a python list of chars. 
@@ -64,4 +63,49 @@ output:
 Encode ham will be responsible for converting our a message and given arguments into the ham radio conversation style by grouping sender and receiver names separated with the char set "de" in this example. Charles is the sender, the receiver is james the formatted message for the ham radio conversation will be "charlesdejames" we then append an equals along with our message. at the end of our message we will append "=(" to mark the end of the message.
 
 The decode ham will decode the ham conversation style message to return us separate values into a turple. This turple will contain the sender, receiver and the message in that order. 
+
+## Task 3
+
+For the final task in this worksheet. We had to establish a web socket connection to a remote server using the given URI
+```python
+uri = "ws://localhost:10102"
+```
+The server we are connecting to provides only 2 types of services. 
+* Echo sends back the same message to the sender (receiver and senders are encoded differently)
+* Time sends back the time in the message content
+
+These server functions will be used to test our program to make sure our ham encoding and ham decodings actually work. and will be put to the test
+
+In the given code below, you can see the test code that I will be using for running these tests. We have an expected output that should be matched when we invoke these functions.
+
+```python
+def test_send_echos(): # perform 5 send echos
+    print("test_send_echos start")
+    assert asyncio.run( morse.send_echo("s","test") ) == ('echo', 's', 'test'), "Should be ('echo', 's', 'test')"
+    assert asyncio.run( morse.send_echo("james","helloworld") ) == ('echo', 'james', 'helloworld'), "Should be ('echo', 'james', 'hello world')"
+    assert asyncio.run( morse.send_echo("charles","amazing") ) == ('echo', 'charles', 'amazing'), "Should be ('echo', 'charles', 'amazing')"
+    assert asyncio.run( morse.send_echo("josh","buyxrp") ) == ('echo', 'josh', 'buyxrp'), "Should be ('echo', 'josh', 'buyxrp')"
+    assert asyncio.run( morse.send_echo("allice","rooos") ) == ('echo', 'allice', 'rooos'), "Should be ('echo', 'allice', 'rooos')"
+    print("test_send_echos PASSED") 
+
+def test_send_time(): # perform a test for send time
+    print("test_send_time start")
+
+    import time # for checking date time
+    # get time for gmt
+    current_time = time.strftime("%H:%M:%S", time.gmtime())
+
+    # get the result from the send_time
+    result = asyncio.run( morse.send_time("s") )
+    print(f"system time: {current_time},\nsend_time response: {result[2]}")
+
+    # if for what ever REASON this returns false it seems the server time is different to your system time
+    assert asyncio.run( morse.send_time("s") ) == ('time', 's', current_time), f"Should be('time', 's', {current_time})"
+    print("test_send_time PASSED") 
+```
+
+Test send echos will send 5 different senders with 5 different messages to test the echo functionality. if there are any problems the assert function will be invoke an exception to tell us something went wrong here.
+
+The test send time will fetch out system time for gm time and compare it to the one on the server. on success the times should match as long as the internet speed or connection to resolve the messages does not exceed 1 second.
+
 

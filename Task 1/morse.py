@@ -4,7 +4,6 @@
 
 # our binary heap
 binary_heap = list('-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90*************_****"**.********\'**-********;!*)***¡*,****:-')
-#binary_heap = list("-ETIANMSURWDKGOHVF*L*PJBXCYZQ**54*3*¿?2&*+****16=/***(*7***8*90-")
 
 def decode_bt(msg):
 
@@ -29,7 +28,7 @@ def decode_bt(msg):
                 index = 2 * index # branch left
             elif morse_char == "-": # if we have a dash
                 index = (2 * index) + 1 # branch right
-            elif morse_char == " ": # theres a spacee in the morse character so output the found char and reset index to 1
+            elif morse_char == " ": # theres a space in the morse character so output the found char and reset index to 1
                 index -= 1 # decrement index
                 print("appending:",decoded_message,"+",binary_heap[index]) # debug
                 decoded_message += binary_heap[index] # append to decoded message from binary heap with index
@@ -39,7 +38,7 @@ def decode_bt(msg):
 
         decoded_message += " " # if a / is detected then add a space into the decoded the message
 
-    decoded_message = decoded_message.strip().lower() # strip any uncessary chars, and force message case to be lower
+    decoded_message = decoded_message.strip().lower() # strip any unnecessary chars, and force message case to be lower
 
     return decoded_message # return the message
 

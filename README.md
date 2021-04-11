@@ -29,6 +29,8 @@ binary_heap[ ( 2 * x ) + 1 ] # returns R
 ```
 The algorithm I created would traverse the linear representation of our binary tree (heap) with the given morse code segment. And will construct our decoded message.
 
+**You can run my main.py script in the "Task 1" folder which contains 5 asserts to test decoding with the binary heap, make sure the other files in this folder are present for the testing to successfully work. These scripts where tested upon Python 3.8.7 upon the "csctcloud.uwe.ac.uk" server.**
+
 ## Task 2
 In this task we had to understand and explore how "Ham Radio Conversations" were conducted. This involved port forwarding a port "10101" from the remote development server. We connected to a site via "localhost:10101". This allowed us to understand how the messages are constructed and decoded better.
 
@@ -63,6 +65,8 @@ output:
 Encode ham will be responsible for converting our a message and given arguments into the ham radio conversation style by grouping sender and receiver names separated with the char set "de" in this example. Charles is the sender, the receiver is james the formatted message for the ham radio conversation will be "charlesdejames" we then append an equals along with our message. at the end of our message we will append "=(" to mark the end of the message.
 
 The decode ham will decode the ham conversation style message to return us separate values into a turple. This turple will contain the sender, receiver and the message in that order. 
+
+**You can run my main.py script in the "Task 2" folder which contains 10 asserts to test ham encoding and decoding, make sure the other files in this folder are present for the testing to successfully work. These scripts where tested upon Python 3.8.7 upon the "csctcloud.uwe.ac.uk" server.**
 
 ## Task 3
 
@@ -108,4 +112,4 @@ Test send echos will send 5 different senders with 5 different messages to test 
 
 The test send time will fetch out system time for gm time and compare it to the one on the server. on success the times should match as long as the internet speed or connection to resolve the messages does not exceed 1 second.
 
-
+**You can run my main.py script in the "Task 3" folder which contains 6 additional asserts from the previous task that will test send echo and send time functions, make sure the other files in this folder are present for the testing to successfully work. These scripts where tested upon Python 3.8.7 upon the "csctcloud.uwe.ac.uk" server. Please make sure your system time is correct, send_time code will convert system time to GMT to match the server time.**
